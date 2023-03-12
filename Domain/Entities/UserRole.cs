@@ -3,7 +3,7 @@ using Domain.Contracts;
 
 namespace Domain.Entities;
 
-public class UserRole : AuditableEntity<Guid>
+public class UserRole : Entity<Guid>
 {
     public string Name { get; set; }
     public int Priority { get; set; }

@@ -2,7 +2,7 @@
 
 public interface IEntity{}
 
-public interface IEntity<TId>
+public interface IEntity<TId> : IEntity
 {
     public TId Id { get; set; }
 }

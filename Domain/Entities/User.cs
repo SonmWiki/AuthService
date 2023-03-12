@@ -2,7 +2,7 @@
 
 namespace Domain.Entities;
 
-public class User : AuditableEntity<Guid>
+public class User : Entity<Guid>
 {
     public string Email { get; set; }
     public string UserName { get; set; }

@@ -2,6 +2,6 @@
 
 namespace Domain.Entities;
 
-public class RolePermission : AuditableEntity<string>
+public class RolePermission : Entity<string>
 {
 }
