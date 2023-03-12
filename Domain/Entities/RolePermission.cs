@@ -1,3 +1,7 @@
-﻿namespace Domain.Entities;
+﻿using Domain.Contracts;
 
-public record RolePermission(string Key);
+namespace Domain.Entities;
+
+public class RolePermission : AuditableEntity<string>
+{
+}

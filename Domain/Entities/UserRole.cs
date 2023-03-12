@@ -1,3 +1,12 @@
-﻿namespace Domain.Entities;
+﻿using System.Collections;
+using Domain.Contracts;
 
-public record UserRole(Guid Id, string Name, int Priority, IEnumerable<RolePermission> Permissions);
+namespace Domain.Entities;
+
+public class UserRole : AuditableEntity<Guid>
+{
+    public string Name { get; set; }
+    public int Priority { get; set; }
+    public virtual ICollection<RolePermission> Permissions { get; set; }
+
+}

@@ -1,3 +1,11 @@
-﻿namespace Domain.Entities;
+﻿using Domain.Contracts;
 
-public record User(Guid Id, string Email, string UserName, string PasswordHash, IEnumerable<UserRole> Roles);
+namespace Domain.Entities;
+
+public class User : AuditableEntity<Guid>
+{
+    public string Email { get; set; }
+    public string UserName { get; set; }
+    public string PasswordHash { get; set; }
+    public virtual ICollection<UserRole> Roles { get; set; }
+}
