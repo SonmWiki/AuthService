@@ -2,7 +2,6 @@
 
 namespace Application.Repository;
 
-public interface IUserRepository : IRepository<User>
+public interface IUserRepository : IRepositoryAsync<User, Guid>
 {
-    
 }

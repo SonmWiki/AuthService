@@ -3,11 +3,11 @@ using Domain.Contracts;
 
 namespace Application.Repository;
 
-public interface IRepository<T> where T : IEntity
+public interface IRepositoryAsync<T, in TId> where T : class, IEntity<TId>
 {
-    IQueryable<T> Entities { get; }
-    Task<IQueryable<T>> GetByConditionAsync(Expression<Func<T, bool>> expression);
-    Task<ICollection<T>> GetAllAsync();
+    Task<T> GetByIdAsync(TId id);
+    Task<IEnumerable<T>> GetAllAsync();
+    Task<IQueryable<T>> Find(Expression<Func<T, bool>> expression);
     Task<T> CreateAsync(T entity);
     Task UpdateAsync(T entity);
     Task DeleteAsync(T entity);

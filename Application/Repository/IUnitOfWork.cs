@@ -1,10 +1,8 @@
 ﻿namespace Application.Repository;
 
-public interface IUnitOfWork : IDisposable
+public interface IUnitOfWork
 {
-    IUserRepository UserRepository { get; }
-    
-    Task<int> CommitAsync(CancellationToken cancellationToken);
+    Task CommitAsync(CancellationToken cancellationToken);
 
     Task RollbackAsync();
 }
